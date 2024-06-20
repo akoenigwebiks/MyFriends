@@ -20,12 +20,28 @@ namespace MyFriends.Controllers
             return View(friendsList);
         }
 
+        public IActionResult Edit(int? id)
+        {
+            if (id == null) return RedirectToAction("Index");
+            FriendModel friend = Data.Get.Friends.Find(id);
+            // Data.Get.Friends.FirstOrDefault(x => x.Id == id);
+            return View(friend);
+        }
+        
+        public IActionResult Details(int? id)
+        {
+            if (id == null) return RedirectToAction("Index");
+            FriendModel friend = Data.Get.Friends.Find(id);
+            // Data.Get.Friends.FirstOrDefault(x => x.Id == id);
+            return View(friend);
+        }
+
         public IActionResult Create()
         {
             return View(new FriendModel());
         }
 
-        [HttpPost,ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken]
         public IActionResult Create(FriendModel friend)
         {
             return RedirectToAction("Index");

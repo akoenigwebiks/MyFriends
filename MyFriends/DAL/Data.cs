@@ -2,7 +2,7 @@
 {
     public class Data
     {
-        private readonly string _connectionString = "Data Source=AEK\\SQLEXPRESS;User ID=sa;Password=12345;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+        private readonly string _connectionString = "Data Source=AEK\\SQLEXPRESS;User ID=sa;Password=12345;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;initial catalog=myfriends;Application Intent=ReadWrite;Multi Subnet Failover=False";
         static Data? _data;
         private DataLayer _dataLayer;
         private Data()
